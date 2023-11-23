@@ -1,0 +1,88 @@
+# █████▀████████████████████████████████████████████████████
+# █─▄▄▄▄█▄─▄▄─█▄─▀█▄─▄███▄─▄▄▀█▄─▄▄─█▄─▄▄─█─▄▄─█▄─▄▄▀█─▄─▄─█
+# █─██▄─██─▄█▀██─█▄▀─█████─▄─▄██─▄█▀██─▄▄▄█─██─██─▄─▄███─███
+# ▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▄▄▀▀▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▀▄▄▀▄▄▀▀▄▄▄▀▀
+#
+#  Version 1.0.0  - Plugin made by Rodrigo R.
+#  Compatible with: BungeeCord, Velocity, Waterfall, PaperMC, Spigot, Bukkit, Any fork of all those.
+
+# Section 1: Discord configuration
+discord:
+  enabled: true # Should the plugin use a discord bot to transcript reports?
+  token: "..." # The discord bot token
+  guild_id: "123" # The discord guild id
+  channel_id: "123" # The discord channel id to send the reports
+  # If the "enabled" option is set to false, this section will be ignored
+  # Embed for the report
+  embed:
+    title: "New Report!" # Title for the message embed
+    description: "%PLAYER% has reported %REPORTED% for %REASON% on %SERVER%" # Description for the message embed
+    color: "RED" # Color of the embed
+    # Colors available:
+    # BLACK
+    # BLUE
+    # CYAN
+    # DARK_GRAY
+    # GRAY
+    # GREEN
+    # LIGHT_GRAY
+    # MAGENTA
+    # ORANGE
+    # PINK
+    # RED
+    # WHITE
+    # YELLOW
+    # All colors available on: java.awt.Color. See docs for "java.awt.Color" here: https://docs.oracle.com/javase/7/docs/api/java/awt/Color.html
+    footer: "Today at %HOUR%:%MINUTE%. " # Footer for the message embed
+    include_heads: true # Should the reporter head appear as the thumbnail of the embed?
+    # The source for the heads is MCHeads
+    thumbnail_url: "..." # If you don't want a head to appear as thumbnail, you can configure a custom one
+    image_url: "..." # The image url for the message embed (Thumbnail and image are not the same thing)
+
+# Section 2: Minecraft configuration
+messages:
+  # For color codes:
+  # Use an ampersand (&) before the color code.
+  # Color codes:
+  # &0 - black
+  # &1 - dark_blue
+  # &2 - dark_green
+  # &3 - dark_aqua
+  # &4 - dark_red
+  # &5 - dark_purple
+  # &6 - gold
+  # &7 - gray
+  # &8 - dark_gray
+  # &9 - blue
+  # &a - green
+  # &b - aqua
+  # &c - red
+  # &d - light_purple
+  # &e - yellow
+  # &f - white
+  # &k - obfuscated
+  # &l - bold
+  # &m - strikethrough
+  # &n - underline
+  # &o - italic
+  # &r - reset
+  prefix: "&d&l[GenReport] &8»&7" # Prefix for all messages. Don't add a space at the end, it is added automatically
+  on_report: # Message sent to staff
+    - "&8(&9!&8) &8——————————————————— &8(&9!&8)"
+    - " " # Add a whitepasce for a line break
+    - "    &a➥ (Staff Mode) New Report!"
+    - " "
+    - "    &6Who reported: &e%PLAYER%"
+    - "    &6Reported: &e%REPORTED%"
+    - "    &6Reason: &e%REASON%"
+    - "    &6Server: &e%SERVER%"
+    - " "
+    - "&8(&9!&8) &8——————————————————— &8(&9!&8)"
+  report_sent: "Your report has been sent. Thank you!"
+  player_not_online: "That player is not online."
+
+# [Placeholders]
+# %PLAYER% - Player name (Player who reported)
+# %REPORTED% - Player name (Reported player)
+# %REASON% - Reason for the report
+# %SERVER% - Server name (If running on Bukkit/Spigot/Paper, replaced with the world name)
