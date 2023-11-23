@@ -82,6 +82,8 @@ messages:
   player_not_online: "That player is not online."
   report_self: "You cannot report yourself."
   cannot_report: "You cannot report that player."
+  usage: "Usage: &c/report <player> <reason>&7."
+  cannot_report_from_console: "You cannot report from the console."
 
 # [Placeholders]
 # %PLAYER% - Player name (Player who reported)
