@@ -80,9 +80,15 @@ messages:
     - "&8(&9!&8) &8——————————————————— &8(&9!&8)"
   report_sent: "Your report has been sent. Thank you!"
   player_not_online: "That player is not online."
+  report_self: "You cannot report yourself."
+  cannot_report: "You cannot report that player."
 
 # [Placeholders]
 # %PLAYER% - Player name (Player who reported)
 # %REPORTED% - Player name (Reported player)
 # %REASON% - Reason for the report
 # %SERVER% - Server name (If running on Bukkit/Spigot/Paper, replaced with the world name)
+
+# [Permissions]
+# genreport.alerts - Alerts for staff
+# genreport.bypass - Bypass for staff
